@@ -213,8 +213,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/docs/faq.md.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -300,7 +298,7 @@
 </div>
 <div class="section" id="use-for-cell-counting-or-centroid-localization">
 <h4>Use for cell counting or centroid localization?<a class="headerlink" href="#use-for-cell-counting-or-centroid-localization" title="Permalink to this headline">¶</a></h4>
-<p>If you just want to count or localize the centroids of cells, it might be a bit overkill to use StarDist (although trying one of the <a class="reference external" href="https://github.com/mpicbg-csbd/stardist/blob/master/README.md#pretrained-models-for-2d">pretrained models</a> is always a good idea). Dedicated cell counting and centroid localization approaches do exist, and they often need weaker forms of labeling, such as cell counts per training image or point annotations for cell centroids. However, if such centroid localization methods yield suboptimal results (e.g. in the case of very densely packed cells/nuclei) it might be worth to spend the extra annotation effort and train a dedicated StarDist model.</p>
+<p>If you just want to count or localize the centroids of cells, it might be a bit overkill to use StarDist (although trying one of the <a class="reference external" href="/docs/index.html#pretrained-models-for-2d">pretrained models</a> is always a good idea). Dedicated cell counting and centroid localization approaches do exist, and they often need weaker forms of labeling, such as cell counts per training image or point annotations for cell centroids. However, if such centroid localization methods yield suboptimal results (e.g. in the case of very densely packed cells/nuclei) it might be worth to spend the extra annotation effort and train a dedicated StarDist model.</p>
 </div>
 </div>
 <div class="section" id="data-format-pre-processing">
@@ -308,7 +306,7 @@
 <div class="section" id="do-i-need-to-pre-process-my-images-e-g-background-subtraction-filtering">
 <h4>Do I need to pre-process my images (e.g. background subtraction, filtering)?<a class="headerlink" href="#do-i-need-to-pre-process-my-images-e-g-background-subtraction-filtering" title="Permalink to this headline">¶</a></h4>
 <p>In general, special pre-processing of images (such as background subtraction, denoising, etc) is not necessary. However it is reasonable to scale your input images such that the overall size of objects (in pixels) is similar to the size of objects used during training. If you have trained your own model, that means to always ensure that new images have roughly the same pixel size as the training images. This will make it much easier for StarDist to learn and might also avoid erroneous predictions of objects that are either too small or too large.</p>
-<p>If you are using a <a class="reference external" href="https://github.com/mpicbg-csbd/stardist/blob/master/README.md#pretrained-models-for-2d">pre-trained model</a>, it is important to know what kind of images it was trained with to understand if your image data is similar enough. In some cases, you can pre-process your images to make them suitable for a pre-trained model (e.g. up/downscaling of the image).</p>
+<p>If you are using a <a class="reference external" href="/docs/index.html#pretrained-models-for-2d">pre-trained model</a>, it is important to know what kind of images it was trained with to understand if your image data is similar enough. In some cases, you can pre-process your images to make them suitable for a pre-trained model (e.g. up/downscaling of the image).</p>
 </div>
 <div class="section" id="is-it-advantageous-to-preprocess-3d-stacks-to-adjust-the-axial-resolution">
 <h4>Is it advantageous to preprocess 3D stacks to adjust the axial resolution?<a class="headerlink" href="#is-it-advantageous-to-preprocess-3d-stacks-to-adjust-the-axial-resolution" title="Permalink to this headline">¶</a></h4>
@@ -382,7 +380,7 @@
 <p>Here is some advice for exporting annotations to a label image from different tools (see <a class="reference external" href="#which-software-do-you-recommend-to-annotate-2d-and-3d-images">here</a> for a list of recommended tools).</p>
 <ul class="simple">
 <li><p>Fiji: Use <a class="reference external" href="https://gist.github.com/maweigert/9f2684f36d3272786461a0c18d4ea176">this script</a> to convert annotations to label images.</p></li>
-<li><p>Labkit: Please read <a class="reference external" href="this">https://github.com/mpicbg-csbd/stardist#annotating-images</a>.</p></li>
+<li><p>Labkit: Please read <a class="reference external" href="https://github.com/mpicbg-csbd/stardist#annotating-images">this</a>.</p></li>
 <li><p>QuPath: See <a class="reference external" href="https://forum.image.sc/t/export-qupath-annotations-for-stardist-training/37391">this post</a> to get started.</p></li>
 </ul>
 </div>
@@ -418,7 +416,7 @@
 <li><p>Neural network prediction based on a normalized input image. This can optionally be GPU-accelerated (in both Python and Fiji) if TensorFlow with the necessary dependencies is installed. (GPU acceleration is very much recommended for 3D images and large 2D images.)</p></li>
 <li><p>Post-processing of the neural network output, which involves a non-maximum suppression step (using the provided probability and overlap thresholds) to prune redundant object instances. This step does not use the GPU (and cannot reasonably be changed to do so), but will take advantage of all available CPU cores, i.e. can be substantially faster on more powerful multi-core CPUs. StarDist was properly installed with multi-core (OpenMP) support if it is running on several CPU cores while predicting.</p></li>
 </ol>
-<p>In order to handle large images (or stacks) that cannot be processed all at once in step 1, there is an option to internally process the input image in separate overlapping tiles. To that end, you can specify the number of tiles in both Python (parameter <em>n_tiles</em> of <em>model.predict</em>) and Fiji. This is especially necessary because GPUs often have limited memory that does not permit to process large images directly.</p>
+<p>In order to handle large images (or stacks) that cannot be processed all at once in step 1, there is an option to internally process the input image in separate overlapping tiles. To that end, you can specify the number of tiles in both Python (parameter <code class="docutils literal notranslate"><span class="pre">n_tiles</span></code> of <code class="docutils literal notranslate"><span class="pre">model.predict</span></code>) and Fiji. This is especially necessary because GPUs often have limited memory that does not permit to process large images directly.</p>
 <p>Step 2 is currently processed for the entire image, which can be a computational bottleneck for large images. To alleviate this issue, we are currently working on another option that will allow us to also perform this step independently for regions of the image.
 Note that we also consider supporting cases where the input image (and resulting prediction) are too large to fit in host memory, i.e. cannot be loaded all at once.</p>
 </div>
@@ -437,7 +435,7 @@ Note that we also consider supporting cases where the input image (and resulting
 </div>
 <div class="section" id="how-does-it-work-under-the-hood-i-want-to-know-technical-details">
 <h3>How does it work under the hood? I want to know technical details.<a class="headerlink" href="#how-does-it-work-under-the-hood-i-want-to-know-technical-details" title="Permalink to this headline">¶</a></h3>
-<p>Please see the <a class="reference external" href="#what-are-the-probability-and-overlap-nms-thresholds-how-do-i-select-good-values">high-level overview</a> above. If you want to know more, please have a look at <a class="reference external" href="https://github.com/mpicbg-csbd/stardist/blob/master/README">our documentation</a> and the papers:</p>
+<p>Please see the <a class="reference external" href="#what-are-the-probability-and-overlap-nms-thresholds-how-do-i-select-good-values">high-level overview</a> above. If you want to know more, please have a look at <a class="reference external" href="/docs/index.html">our documentation</a> and the papers:</p>
 <ul class="simple">
 <li><p>Uwe Schmidt, Martin Weigert, Coleman Broaddus, and Gene Myers.<br /><a class="reference external" href="https://arxiv.org/abs/1806.03535"><em>Cell Detection with Star-convex Polygons</em></a>.<br />International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), Granada, Spain, September 2018.</p></li>
 <li><p>Martin Weigert, Uwe Schmidt, Robert Haase, Ko Sugawara, and Gene Myers.<br /><a class="reference external" href="http://openaccess.thecvf.com/content_WACV_2020/papers/Weigert_Star-convex_Polyhedra_for_3D_Object_Detection_and_Segmentation_in_Microscopy_WACV_2020_paper.pdf"><em>Star-convex Polyhedra for 3D Object Detection and Segmentation in Microscopy</em></a>.<br />The IEEE Winter Conference on Applications of Computer Vision (WACV), Snowmass Village, Colorado, March 2020</p></li>
