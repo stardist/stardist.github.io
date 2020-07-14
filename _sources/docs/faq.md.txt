@@ -312,7 +312,8 @@ After training your StarDist model in Python, you can export it to be used in [F
 
 It is important that the version of TensorFlow (a neural network library that StarDist depends on) used in Fiji (or QuPath) is the same or newer as in Python. You can find out which version is used in Python via `import tensorflow; print(tensorflow.__version__)`. In Fiji, you can manage your version of TensorFlow via *Edit > Options > TensorFlow...*. Note that this also applies to our pretrained models, which currently require TensorFlow 1.12.0 or newer.
 
-Note that StarDist currently *only* supports TensorFlow 1.x, i.e. do not upgrade or install a recent 2.x version.
+<del>Note that StarDist currently *only* supports TensorFlow 1.x, i.e. do not upgrade or install a recent 2.x version.</del>
+Starting with version 0.6.0, StarDist for Python does work with either TensorFlow 1 or 2. Furthermore, when using TensorFlow 2, it appears that an exported model will work in Fiji with TensorFlow 1.14.0.
 
 
 #### Can it be used in DeepImageJ?
