@@ -1,0 +1,2 @@
+# FAQ
+- https://github.com/mpicbg-csbd/stardist/issues/60#issuecomment-638170578

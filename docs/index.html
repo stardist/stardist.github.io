@@ -176,7 +176,7 @@
   <div class="section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>The following figure illustrates the general approach for 2D images. The training data consists of corresponding pairs of input (i.e. raw) images and fully annotated label images (i.e. every pixel is labeled with a unique object id or 0 for background).
-A model is trained to densely predict the distances (r) to the object boundary along a fixed set of rays and object probabilities (d), which together produce an overcomplete set of candidate polygons for a given input image. The final result is obtained via non-maximum supression (NMS) of these candidates.</p>
+A model is trained to densely predict the distances (r) to the object boundary along a fixed set of rays and object probabilities (d), which together produce an overcomplete set of candidate polygons for a given input image. The final result is obtained via non-maximum suppression (NMS) of these candidates.</p>
 <p><img alt="https://github.com/mpicbg-csbd/stardist/raw/master/images/overview_2d.png" src="https://github.com/mpicbg-csbd/stardist/raw/master/images/overview_2d.png" /></p>
 <p>The approach for 3D volumes is similar to the one described for 2D, using pairs of input and fully annotated label volumes as training data.</p>
 <p><img alt="https://github.com/mpicbg-csbd/stardist/raw/master/images/overview_3d.png" src="https://github.com/mpicbg-csbd/stardist/raw/master/images/overview_3d.png" /></p>
@@ -188,16 +188,17 @@ A model is trained to densely predict the distances (r) to the object boundary a
 </div>
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>This package requires Python 3.5 (or newer).</p>
-<p>Please first <a class="reference external" href="https://www.tensorflow.org/install">install TensorFlow 1.x</a>
-by following the official instructions. (<strong>Do not choose TensorFlow 2.x</strong>)
+<p>This package requires Python 3.6 (or newer).</p>
+<ol>
+<li><p>Please first <a class="reference external" href="https://www.tensorflow.org/install">install TensorFlow</a>
+(either TensorFlow 1 or 2) by following the official instructions.
 For <a class="reference external" href="https://www.tensorflow.org/install/gpu">GPU support</a>, it is very
 important to install the specific versions of CUDA and cuDNN that are
-compatible with the respective version of TensorFlow.</p>
-<p><em>StarDist</em> can then be installed with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">stardist</span>
-</pre></div>
-</div>
+compatible with the respective version of TensorFlow.</p></li>
+<li><p><em>StarDist</em> can then be installed with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">stardist</span></code></p>
+</li>
+</ol>
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -210,7 +211,7 @@ compatible with the respective version of TensorFlow.</p>
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
-<p>Installation requires Python 3.5 (or newer) and a working C++ compiler. We have only tested <a class="reference external" href="http://gcc.gnu.org">GCC</a> (macOS, Linux), <a class="reference external" href="https://clang.llvm.org">Clang</a> (macOS), and <a class="reference external" href="https://visualstudio.microsoft.com">Visual Studio</a> (Windows 10). Please <a class="reference external" href="https://github.com/mpicbg-csbd/stardist/issues">open an issue</a> if you have problems that are not resolved by the information below.</p>
+<p>Installation requires Python 3.6 (or newer) and a working C++ compiler. We have only tested <a class="reference external" href="http://gcc.gnu.org">GCC</a> (macOS, Linux), <a class="reference external" href="https://clang.llvm.org">Clang</a> (macOS), and <a class="reference external" href="https://visualstudio.microsoft.com">Visual Studio</a> (Windows 10). Please <a class="reference external" href="https://github.com/mpicbg-csbd/stardist/issues">open an issue</a> if you have problems that are not resolved by the information below.</p>
 <p>If available, the C++ code will make use of <a class="reference external" href="https://en.wikipedia.org/wiki/OpenMP">OpenMP</a> to exploit multiple CPU cores for substantially reduced runtime on modern CPUs. This can be important to prevent slow model training.</p>
 <div class="section" id="macos">
 <h3>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
@@ -223,11 +224,11 @@ To properly build <code class="docutils literal notranslate"><span class="pre">s
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Symbol</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span> <span class="n">_GOMP_loop_nonmonotonic_dynamic_next</span>
 </pre></div>
 </div>
-<p>please see <a class="reference external" href="https://github.com/mpicbg-csbd/stardist/issues/19#issuecomment-535610758">this issue</a> for a temporay workaround.</p>
+<p>please see <a class="reference external" href="https://github.com/mpicbg-csbd/stardist/issues/19#issuecomment-535610758">this issue</a> for a temporary workaround.</p>
 </div>
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
-<p>Please install the <a class="reference external" href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019">Build Tools for Visual Studio 2019</a> from Microsoft to compile extensions for Python 3.5 and newer (see <a class="reference external" href="https://wiki.python.org/moin/WindowsCompilers">this</a> for further information). During installation, make sure to select the <em>C++ build tools</em>. Note that the compiler comes with OpenMP support.</p>
+<p>Please install the <a class="reference external" href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019">Build Tools for Visual Studio 2019</a> from Microsoft to compile extensions for Python 3.6 and newer (see <a class="reference external" href="https://wiki.python.org/moin/WindowsCompilers">this</a> for further information). During installation, make sure to select the <em>C++ build tools</em>. Note that the compiler comes with OpenMP support.</p>
 </div>
 </div>
 </div>
@@ -291,7 +292,7 @@ To create such annotations in 2D, there are several options, among them being <a
 <ol class="simple">
 <li><p>Install <a class="reference external" href="https://fiji.sc">Fiji</a> and the <a class="reference external" href="https://imagej.net/Labkit">Labkit</a> plugin</p></li>
 <li><p>Open the (2D or 3D) image and start Labkit via <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">&gt;</span> <span class="pre">Segmentation</span> <span class="pre">&gt;</span> <span class="pre">Labkit</span></code></p></li>
-<li><p>Sucessively add a new label and annotate a single cell instance with the brush tool (always check the <code class="docutils literal notranslate"><span class="pre">override</span></code> option) until <em>all</em> cells are labeled</p></li>
+<li><p>Successively add a new label and annotate a single cell instance with the brush tool (always check the <code class="docutils literal notranslate"><span class="pre">override</span></code> option) until <em>all</em> cells are labeled</p></li>
 <li><p>Export the label image via <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Labeling...</span></code> and <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">format</span> <span class="pre">&gt;</span> <span class="pre">TIF</span> <span class="pre">Image</span></code></p></li>
 </ol>
 <p><img alt="https://github.com/mpicbg-csbd/stardist/raw/master/images/labkit_2d_labkit.png" src="https://github.com/mpicbg-csbd/stardist/raw/master/images/labkit_2d_labkit.png" /></p>
@@ -341,7 +342,7 @@ To create such annotations in 2D, there are several options, among them being <a
     <p>
         &copy; Copyright 2020, StarDist docs authors.
       <span class="lastupdated">
-        Last updated on Jun 03, 2020.
+        Last updated on Jul 14, 2020.
       </span>
 
     </p>

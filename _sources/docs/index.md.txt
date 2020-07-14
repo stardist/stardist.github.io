@@ -1,7 +1,7 @@
 # Overview
 
 The following figure illustrates the general approach for 2D images. The training data consists of corresponding pairs of input (i.e. raw) images and fully annotated label images (i.e. every pixel is labeled with a unique object id or 0 for background). 
-A model is trained to densely predict the distances (r) to the object boundary along a fixed set of rays and object probabilities (d), which together produce an overcomplete set of candidate polygons for a given input image. The final result is obtained via non-maximum supression (NMS) of these candidates.  
+A model is trained to densely predict the distances (r) to the object boundary along a fixed set of rays and object probabilities (d), which together produce an overcomplete set of candidate polygons for a given input image. The final result is obtained via non-maximum suppression (NMS) of these candidates.  
 
 ![](https://github.com/mpicbg-csbd/stardist/raw/master/images/overview_2d.png)
 
@@ -19,17 +19,17 @@ If you want to know more about the concepts and practical applications of StarDi
 
 # Installation
 
-This package requires Python 3.5 (or newer).
+This package requires Python 3.6 (or newer).
 
-Please first [install TensorFlow 1.x](https://www.tensorflow.org/install)
-by following the official instructions. (**Do not choose TensorFlow 2.x**)
+1. Please first [install TensorFlow](https://www.tensorflow.org/install)
+(either TensorFlow 1 or 2) by following the official instructions.
 For [GPU support](https://www.tensorflow.org/install/gpu), it is very
 important to install the specific versions of CUDA and cuDNN that are
 compatible with the respective version of TensorFlow.
 
-*StarDist* can then be installed with `pip`:
+2. *StarDist* can then be installed with `pip`:
 
-    pip install stardist
+    `pip install stardist`
 
 ## Notes
 
@@ -41,7 +41,7 @@ compatible with the respective version of TensorFlow.
 
 ## Troubleshooting
 
-Installation requires Python 3.5 (or newer) and a working C++ compiler. We have only tested [GCC](http://gcc.gnu.org) (macOS, Linux), [Clang](https://clang.llvm.org) (macOS), and [Visual Studio](https://visualstudio.microsoft.com) (Windows 10). Please [open an issue](https://github.com/mpicbg-csbd/stardist/issues) if you have problems that are not resolved by the information below.
+Installation requires Python 3.6 (or newer) and a working C++ compiler. We have only tested [GCC](http://gcc.gnu.org) (macOS, Linux), [Clang](https://clang.llvm.org) (macOS), and [Visual Studio](https://visualstudio.microsoft.com) (Windows 10). Please [open an issue](https://github.com/mpicbg-csbd/stardist/issues) if you have problems that are not resolved by the information below.
 
 If available, the C++ code will make use of [OpenMP](https://en.wikipedia.org/wiki/OpenMP) to exploit multiple CPU cores for substantially reduced runtime on modern CPUs. This can be important to prevent slow model training.
 
@@ -56,10 +56,10 @@ If you use `conda` on macOS and after `import stardist` see errors similar to th
 
     Symbol not found: _GOMP_loop_nonmonotonic_dynamic_next
 
-please see [this issue](https://github.com/mpicbg-csbd/stardist/issues/19#issuecomment-535610758) for a temporay workaround.  
+please see [this issue](https://github.com/mpicbg-csbd/stardist/issues/19#issuecomment-535610758) for a temporary workaround.  
 
 ### Windows
-Please install the [Build Tools for Visual Studio 2019](https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019) from Microsoft to compile extensions for Python 3.5 and newer (see [this](https://wiki.python.org/moin/WindowsCompilers) for further information). During installation, make sure to select the *C++ build tools*. Note that the compiler comes with OpenMP support.
+Please install the [Build Tools for Visual Studio 2019](https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019) from Microsoft to compile extensions for Python 3.6 and newer (see [this](https://wiki.python.org/moin/WindowsCompilers) for further information). During installation, make sure to select the *C++ build tools*. Note that the compiler comes with OpenMP support.
 
 
 # Usage
@@ -132,7 +132,7 @@ Although each of these provide decent annotation tools, we currently recommend u
 
 1. Install [Fiji](https://fiji.sc) and the [Labkit](https://imagej.net/Labkit) plugin
 2. Open the (2D or 3D) image and start Labkit via `Plugins > Segmentation > Labkit`
-3. Sucessively add a new label and annotate a single cell instance with the brush tool (always check the `override` option) until *all* cells are labeled
+3. Successively add a new label and annotate a single cell instance with the brush tool (always check the `override` option) until *all* cells are labeled
 4. Export the label image via `Save Labeling...` and `File format > TIF Image` 
 
 ![](https://github.com/mpicbg-csbd/stardist/raw/master/images/labkit_2d_labkit.png)
