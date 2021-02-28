@@ -1,3 +1,4 @@
+
 # Frequently Asked Questions (FAQ)
 
 <!--
@@ -82,7 +83,7 @@ Ideally, StarDist could additionally classify all objects while segmenting them.
 
 #### Use for cell counting or centroid localization?
 
-If you just want to count or localize the centroids of cells, it might be a bit overkill to use StarDist (although trying one of the [pretrained models](/docs/index.html#pretrained-models-for-2d) is always a good idea). Dedicated cell counting and centroid localization approaches do exist, and they often need weaker forms of labeling, such as cell counts per training image or point annotations for cell centroids. However, if such centroid localization methods yield suboptimal results (e.g. in the case of very densely packed cells/nuclei) it might be worth to spend the extra annotation effort and train a dedicated StarDist model.
+If you just want to count or localize the centroids of cells, it might be a bit overkill to use StarDist (although trying one of the [pretrained models](https://github.com/mpicbg-csbd/stardist#pretrained-models-for-2d) is always a good idea). Dedicated cell counting and centroid localization approaches do exist, and they often need weaker forms of labeling, such as cell counts per training image or point annotations for cell centroids. However, if such centroid localization methods yield suboptimal results (e.g. in the case of very densely packed cells/nuclei) it might be worth to spend the extra annotation effort and train a dedicated StarDist model.
 
 
 ### Data format/pre-processing
@@ -91,7 +92,7 @@ If you just want to count or localize the centroids of cells, it might be a bit 
 
 In general, special pre-processing of images (such as background subtraction, denoising, etc) is not necessary. However it is reasonable to scale your input images such that the overall size of objects (in pixels) is similar to the size of objects used during training. If you have trained your own model, that means to always ensure that new images have roughly the same pixel size as the training images. This will make it much easier for StarDist to learn and might also avoid erroneous predictions of objects that are either too small or too large.
 
-If you are using a [pre-trained model](/docs/index.html#pretrained-models-for-2d), it is important to know what kind of images it was trained with to understand if your image data is similar enough. In some cases, you can pre-process your images to make them suitable for a pre-trained model (e.g. up/downscaling of the image).
+If you are using a [pre-trained model](https://github.com/mpicbg-csbd/stardist#pretrained-models-for-2d), it is important to know what kind of images it was trained with to understand if your image data is similar enough. In some cases, you can pre-process your images to make them suitable for a pre-trained model (e.g. up/downscaling of the image).
 
 
 #### Is it advantageous to preprocess 3D stacks to adjust the axial resolution?
@@ -251,7 +252,7 @@ At the end of our [training notebooks](https://github.com/mpicbg-csbd/stardist/t
 
 #### How does it work under the hood? I want to know technical details.
 
-Please see the [high-level overview](#what-are-the-probability-and-overlap-nms-thresholds-how-do-i-select-good-values) above. If you want to know more, please have a look at [our documentation](/docs/index.html) and the papers:
+Please see the [high-level overview](#what-are-the-probability-and-overlap-nms-thresholds-how-do-i-select-good-values) above. If you want to know more, please have a look at [our documentation](https://github.com/mpicbg-csbd/stardist) and the papers:
 
 - Uwe Schmidt, Martin Weigert, Coleman Broaddus, and Gene Myers.  
 [*Cell Detection with Star-convex Polygons*](https://arxiv.org/abs/1806.03535).  

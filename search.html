@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,11 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
   
   
   
@@ -19,7 +23,10 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+    
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -27,16 +34,12 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script src="_static/searchtools.js"></script>
+        <script src="_static/js/custom.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript" src="_static/searchtools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="#" /> 
 </head>
@@ -52,12 +55,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> StarDist
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> StarDist
           
 
           
             
-            <img src="_static/logo.png" class="logo" alt="Logo"/>
+            <img src="_static/logo_transp.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -78,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -86,16 +90,84 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="docs/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/index.html#installation">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/index.html#usage">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/index.html#imagej-fiji-plugin">ImageJ/Fiji Plugin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="docs/faq.html">Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/faq.html">Frequently Asked Questions (FAQ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/faq.html#data">Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#will-it-work-for-my-data-application">Will it work for my data/application?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#how-do-i-know-if-my-objects-of-interest-are-sufficiently-star-convex-i-e-is-stardist-a-good-choice-for-my-data">How do I know if my objects of interest are (sufficiently) star-convex, i.e. is StarDist a good choice for my data?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#other-stains-markers-with-different-appearance-quality-or-inhomogeneity">Other stains/markers with different appearance, quality, or inhomogeneity?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#can-other-objects-besides-round-nuclei-be-segmented-e-g-multi-lobe-nuclei-granules-bacteria">Can other objects besides round nuclei be segmented (e.g. multi-lobe nuclei, granules, bacteria)?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#with-multiple-nucleus-types-is-it-possible-to-only-segment-some-or-classify-in-addition-to-segmentation">With multiple nucleus types, is it possible to only segment some or classify in addition to segmentation?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#use-for-cell-counting-or-centroid-localization">Use for cell counting or centroid localization?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#data-format-pre-processing">Data format/pre-processing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#do-i-need-to-pre-process-my-images-e-g-background-subtraction-filtering">Do I need to pre-process my images (e.g. background subtraction, filtering)?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#is-it-advantageous-to-preprocess-3d-stacks-to-adjust-the-axial-resolution">Is it advantageous to preprocess 3D stacks to adjust the axial resolution?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#is-a-specific-image-format-size-or-normalization-required">Is a specific image format, size, or normalization required?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#are-multi-channel-images-supported">Are multi-channel images supported?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/faq.html#labeling-annotation">Labeling/annotation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#how-to-label">How to label</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#should-i-annotate-a-few-entire-raw-images-stacks-or-is-it-better-to-annotate-several-smaller-image-crops">Should I annotate a few entire raw images/stacks, or is it better to annotate several smaller image crops?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#which-size-should-the-training-images-be">Which size should the training images be?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#is-there-an-upper-size-limit-for-objects-to-be-well-segmented">Is there an upper size limit for objects to be well segmented?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#do-i-have-to-annotate-all-nuclei-objects-in-a-training-image-what-about-those-that-are-only-partially-visible-what-about-other-objects-not-of-interest">Do I have to annotate all nuclei (objects) in a training image? What about those that are only partially visible? What about other objects not of interest?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#is-it-better-to-annotate-images-from-scratch-or-to-bootstrap-curate-imperfect-annotations-e-g-from-another-method-is-training-sensitive-to-annotation-mistakes">Is it better to annotate images from scratch or to bootstrap/curate imperfect annotations (e.g. from another method)? Is training sensitive to annotation mistakes?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#how-many-images-or-nucleus-object-instances-do-i-have-to-annotate-for-good-results">How many images or nucleus (object) instances do I have to annotate for good results?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#software-format-for-labeling">Software/format for labeling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#in-which-format-do-i-need-to-save-my-image-annotations">In which format do I need to save my image annotations?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#which-software-do-you-recommend-to-annotate-2d-and-3d-images">Which software do you recommend to annotate 2D and 3D images?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/faq.html#i-ve-annotated-my-images-in-software-x-how-do-i-export-the-annotations-as-label-images">I’ve annotated my images in software X, how do I export the annotations as label images?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/faq.html#using-pretrained-models">Using pretrained models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#how-do-i-know-if-a-pretrained-or-any-model-is-suitable-good-enough-for-my-data">How do I know if a pretrained (or any) model is suitable/good enough for my data?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#do-i-need-to-rescale-my-images-how-do-i-know-which-pixel-resolution-is-required">Do I need to rescale my images? How do I know which pixel resolution is required?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#is-there-a-pretrained-model-for-3d-or-do-you-plan-to-release-one">Is there a pretrained model for 3D, or do you plan to release one?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#do-you-have-plans-to-release-other-pretrained-models">Do you have plans to release other pretrained models?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/faq.html#speed-hardware-gpu">Speed/Hardware/GPU</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#how-can-i-speed-up-the-prediction-is-it-possible-to-predict-on-very-large-images-stacks">How can I speed up the prediction? Is it possible to predict on very large images/stacks?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#what-hardware-do-you-recommend">What hardware do you recommend?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/faq.html#method-technical">Method/technical</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#what-are-the-probability-and-overlap-nms-thresholds-how-do-i-select-good-values">What are the probability and overlap/NMS thresholds? How do I select good values?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#how-does-it-work-under-the-hood-i-want-to-know-technical-details">How does it work under the hood? I want to know technical details.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#is-a-trained-model-sensitive-to-changes-in-image-intensity-or-object-size-as-compared-to-the-training-images">Is a trained model sensitive to changes in image intensity or object size (as compared to the training images)?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#do-you-support-or-recommend-transfer-learning">Do you support or recommend “transfer learning”?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/faq.html#postprocessing-quantification">Postprocessing/quantification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#is-it-possible-to-refine-the-shape-of-the-predicted-objects-e-g-for-not-fully-star-convex-objects">Is it possible to “refine” the shape of the predicted objects (e.g. for not fully star-convex objects)?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#how-do-i-evaluate-the-quality-of-the-predicted-results-of-a-model">How do I evaluate the quality of the predicted results of a model?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#how-can-i-perform-measurements-of-the-predicted-objects-in-software-x">How can I perform measurements of the predicted objects in software X?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#how-can-i-import-the-predicted-results-into-software-x">How can I import the predicted results into software X?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/faq.html#fiji-imagej">Fiji/ImageJ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#after-training-in-python-how-do-i-export-a-model-to-be-used-in-fiji-do-i-have-to-be-careful-with-the-version-of-tensorflow">After training in Python, how do I export a model to be used in Fiji? Do I have to be careful with the version of TensorFlow?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#can-it-be-used-in-deepimagej">Can it be used in DeepImageJ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#the-fiji-plugin-currently-only-supports-2d-images-is-3d-support-planned">The Fiji plugin currently only supports 2D images. Is 3D support planned?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/faq.html#are-there-differences-between-the-python-and-fiji-versions">Are there differences between the Python and Fiji versions?</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -134,7 +206,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Search</li>
     
@@ -156,8 +228,7 @@
   <noscript>
   <div id="fallback" class="admonition warning">
     <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
+      Please activate JavaScript to enable the search functionality.
     </p>
   </div>
   </noscript>
@@ -177,14 +248,22 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, StarDist docs authors.
       <span class="lastupdated">
-        Last updated on Jul 14, 2020.
+        Last updated on Feb 28, 2021.
       </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -195,7 +274,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

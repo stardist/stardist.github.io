@@ -1,26 +1,14 @@
-# StarDist
-## *Object Detection with Star-convex Shapes*
+
+# FAQs for StarDist - Object Detection with Star-Convex Polygons
 
 ![](https://github.com/mpicbg-csbd/stardist/raw/master/images/stardist_overview.png)
 
-[![PyPI version](https://badge.fury.io/py/stardist.svg)](https://pypi.org/project/stardist)
-[![Linux build status](https://travis-ci.com/mpicbg-csbd/stardist.svg?branch=master)](https://travis-ci.com/mpicbg-csbd/stardist)
-[![Windows build status](https://ci.appveyor.com/api/projects/status/gyu127aqc8y5av79/branch/master?svg=true)](https://ci.appveyor.com/project/UweSchmidt/stardist/branch/master)
-[![Image.sc forum](https://img.shields.io/badge/dynamic/json.svg?label=forum&url=https%3A%2F%2Fforum.image.sc%2Ftags%2Fstardist.json&query=%24.topic_list.tags.0.topic_count&colorB=brightgreen&suffix=%20topics&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAABPklEQVR42m3SyyqFURTA8Y2BER0TDyExZ+aSPIKUlPIITFzKeQWXwhBlQrmFgUzMMFLKZeguBu5y+//17dP3nc5vuPdee6299gohUYYaDGOyyACq4JmQVoFujOMR77hNfOAGM+hBOQqB9TjHD36xhAa04RCuuXeKOvwHVWIKL9jCK2bRiV284QgL8MwEjAneeo9VNOEaBhzALGtoRy02cIcWhE34jj5YxgW+E5Z4iTPkMYpPLCNY3hdOYEfNbKYdmNngZ1jyEzw7h7AIb3fRTQ95OAZ6yQpGYHMMtOTgouktYwxuXsHgWLLl+4x++Kx1FJrjLTagA77bTPvYgw1rRqY56e+w7GNYsqX6JfPwi7aR+Y5SA+BXtKIRfkfJAYgj14tpOF6+I46c4/cAM3UhM3JxyKsxiOIhH0IO6SH/A1Kb1WBeUjbkAAAAAElFTkSuQmCC)](https://forum.image.sc/tags/stardist)
+This page provides answers to frequently asked questions (FAQ) when using StarDist.
 
-This is the documentation for star-convex object detection for 2D and 3D images, as described in the papers:
+Please visit the [main stardist project page](https://github.com/mpicbg-csbd/stardist/) for general documentation, installation instructions, and issue reports. 
 
-<!-- <img src="https://github.com/mpicbg-csbd/stardist/raw/master/images/stardist_logo.jpg" title="siân is the king of the universe" width="25%" align="right"> -->
 
-- Uwe Schmidt, Martin Weigert, Coleman Broaddus, and Gene Myers.  
-[*Cell Detection with Star-convex Polygons*](https://arxiv.org/abs/1806.03535).  
-International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), Granada, Spain, September 2018.
-
-- Martin Weigert, Uwe Schmidt, Robert Haase, Ko Sugawara, and Gene Myers.  
-[*Star-convex Polyhedra for 3D Object Detection and Segmentation in Microscopy*](http://openaccess.thecvf.com/content_WACV_2020/papers/Weigert_Star-convex_Polyhedra_for_3D_Object_Detection_and_Segmentation_in_Microscopy_WACV_2020_paper.pdf).  
-The IEEE Winter Conference on Applications of Computer Vision (WACV), Snowmass Village, Colorado, March 2020
-
-Please cite the paper(s) if you are using this code in your research.
+If you are using StarDist in your research please cite the paper(s) 
 
 ```bibtex
 @inproceedings{schmidt2018,
@@ -43,11 +31,9 @@ Please cite the paper(s) if you are using this code in your research.
 }
 ```
 
-
 ``` toctree::
     :maxdepth: 2
     :hidden:
-
-    docs/index
+    
     docs/faq
 ```
