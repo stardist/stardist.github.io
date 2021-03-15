@@ -1,11 +1,11 @@
 
 # FAQs for StarDist - Object Detection with Star-Convex Polygons
 
-![](https://github.com/mpicbg-csbd/stardist/raw/master/images/stardist_overview.png)
+![](https://github.com/stardist/stardist/raw/master/images/stardist_overview.png)
 
 This page provides answers to frequently asked questions (FAQ) when using StarDist.
 
-Please visit the [main stardist project page](https://github.com/mpicbg-csbd/stardist/) for general documentation, installation instructions, and issue reports. 
+Please visit the [main stardist project page](https://github.com/stardist/stardist/) for general documentation, installation instructions, and issue reports. 
 
 
 If you are using StarDist in your research please cite the paper(s) 
